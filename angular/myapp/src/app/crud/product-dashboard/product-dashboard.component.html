@@ -1,0 +1,24 @@
+<p>product-dashboard works!</p>
+
+<button type="button" routerLink="/mainDashboard/productadd" class="btn btn-secondary mb-2"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+<th>S.No</th><th>Name</th><th>Price</th><th>Company</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of myproducts">
+            <td>{{myproducts.indexOf(product)+1}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.company}}</td>
+            <td>
+                <button type="button" [routerLink]="['/mainDashboard/productupdate',product.id]" class="btn btn-outline-success" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>&nbsp;
+                <button type="button" class="btn btn-outline-danger" (click)="deleteData(product.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

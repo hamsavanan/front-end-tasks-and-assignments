@@ -1,0 +1,56 @@
+
+
+.container-fluid{
+   
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+
+.container{
+    overflow: auto;
+    padding: 10px;
+    font-weight: 800;
+}
+
+.img1{
+    width: 300px;
+    height: 300px;
+}
+
+
+
+
+
+.reserve{
+    text-align: center;
+}
+li{
+    font-weight: 600;
+}
+
+
+
+
+
+header{
+    vertical-align: middle;
+      }
+    
+      .pk{
+        border-radius: 50%;
+        margin:10px;
+      }
+    
+    span{
+      font-size: 22px;
+      font-weight: bolder;
+    }
+    
+      .d-flex{
+        float:right;
+    margin-right: 30px;
+    margin-top: 60px;
+      }

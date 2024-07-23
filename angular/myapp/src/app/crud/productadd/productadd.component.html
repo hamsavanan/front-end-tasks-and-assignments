@@ -1,0 +1,18 @@
+
+<form [formGroup]="prodData" (ngSubmit)="addData()">
+    <label class="form-label">Enter Your Product Name</label>
+    <input type="text" name="pname" formControlName="pname" class="form-control">
+
+
+<label class="form-label">Enter Your Price</label>
+<input type="text" name="price" formControlName="price" class="form-control">
+
+
+<label class="form-label">Enter Your Company</label>
+<input type="company" name="company" formControlName="company" class="form-control">
+
+
+<button type="submit" class="btn btn-success mt-2" [disabled]="prodData.invalid">Add</button>
+
+
+</form>

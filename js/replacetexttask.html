@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace text task</title>
+    <style>
+        .container {
+            border: 2px solid green;
+            width: 900px;
+            height: 500px;
+            margin: auto;
+            background-color: black;
+        }
+        .textarea {
+            border: 2px solid white;
+            width: 400px;
+            height: 400px;
+            float: left;
+        }
+        textarea {
+            width: 390px;
+            height: 390px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .input {
+            border: 2px solid white;
+            float: right;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="textarea">
+            <textarea name="textarea" id="textarea"></textarea>
+        </div>
+        <div class="input">
+            <label for="replace-text" style="color: white;">Enter replace text</label>
+            <input type="text" id="replace-text"> <br>
+            <button type="button" onclick="replace()">Replace Text</button>
+            <br><br>
+            <label for="replace-all-text" style="color: white;">Enter Replace All</label>
+            <input type="text" id="replace-all-text"> <br>
+            <button type="button" onclick="replaceAll()">Replace All Text</button>
+        </div>
+    </div>
+    <script>
+        let msg = "Hello all, how are you all, you all are bright students";
+        document.getElementById("textarea").value = msg;
+        
+        function replace() {
+            let replaceText = document.getElementById("replace-text").value;
+            let updatedMsg = msg.replace("you", replaceText);
+            document.getElementById("textarea").value = updatedMsg;
+        }
+        
+        function replaceAll() {
+            let replaceText = document.getElementById("replace-all-text").value;
+            let updatedMsg = msg.replace(/you/g, replaceText);
+            document.getElementById("textarea").value = updatedMsg;
+        }
+    </script>
+</body>
+</html>

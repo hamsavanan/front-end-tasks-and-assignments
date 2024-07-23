@@ -1,0 +1,16 @@
+<!-- <p>databinding works!</p> -->
+
+<!-- use of interpolation -->
+<h2>{{myName}}</h2>
+<p>{{num1+num2}}</p>
+<hr>
+<!-- use of property binding -->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTny3SwAPrbFVve_VPGNcsXV3DNrQjIDMTB5w&s" alt="Roger">
+<hr>
+<!-- use of event binding -->
+<button type="button" (click)="greeting()">Click Here</button>
+<hr>
+<!-- use of ngModel -->
+<form>
+<input type="text" name="txt1" [(ngModel)] ="myData"> {{myData}}
+</form>

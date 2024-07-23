@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image</title>
+</head>
+<body>
+
+    <img src="../assets/images/roger.jfif" alt="roger" id="jewelleryImage"><br>
+    <strong id="imgname">roger</strong><br>
+    <button type="button" onclick="change('one')" id="one">roger</button>
+    <button type="button" onclick="change('two')" id="two">luffy</button>
+    <button type="button" onclick="change('three')" id="three">rayleigh</button>
+    <button type="button" onclick="change('four')" id="four">zoro</button>
+    <button type="button" onclick="change('five')" id="five">sanji</button>
+    <button type="button" onclick="change('six')" id="six">franky</button>
+
+
+    <script>
+        function change(val){
+            let imgElement = document.getElementById("jewelleryImage");
+            let nameElement = document.getElementById("imgname");
+
+            switch(val) {
+                case 'one':
+                    imgElement.src = "../assets/images/roger.jfif";
+                    nameElement.innerHTML = "roger";
+                    break;
+                case 'two':
+                    imgElement.src = "../assets/images/luffy.jfif";
+                    nameElement.innerHTML = "luffy";
+                    break;
+                case 'three':
+                    imgElement.src = "../assets/images/rayleigh.jfif";
+                    nameElement.innerHTML = "rayleigh";
+                    break;
+                case 'four':
+                    imgElement.src = "../assets/images/zoro.jfif";
+                    nameElement.innerHTML = "zoro";
+                    break;
+                case 'five':
+                    imgElement.src = "../assets/images/sanji.jfif";
+                    nameElement.innerHTML = "sanji";
+                    break;
+                case 'six':
+                    imgElement.src = "../assets/images/franky.jfif";
+                    nameElement.innerHTML = "franky";
+                    break;
+                default:
+                    console.log("Invalid option");
+                    break;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .myform {
+        border: 2px solid blue;
+        width: 300px;
+        margin: auto;
+        padding: 7px;
+        border-radius: 6px;
+        box-shadow: 12px 12px 14px black;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="myform">
+      <label for="">Enter First Number:</label>
+      <input type="text" name="num1" id="num1" /> <br />
+      <br />
+      <label for="">Enter Second Number:</label>
+      <input type="text" name="num2" id="num2" /> <br />
+      <br />
+
+      <button type="button" onclick="addition()">Add</button>
+      <button type="button" onclick="subtraction()">Sub</button>
+      <button type="button" onclick="multiply()">Mul</button>
+      <button type="button" onclick="division()">Div</button><br />
+      <br />
+      <b>Result:<span id="span"></span></b>
+    </form>
+    <script>
+        function addition(){
+            // window.alert("hi");
+         let no1 =document.getElementById("num1").value;
+         let no2 =document.getElementById("num2").value;
+         console.log(parseInt(no1)+parseInt(no2));
+         document.getElementById("span").innerHTML = (parseInt(no1)+parseInt(no2));
+        }
+
+function subtraction(){
+  let no1 =document.getElementById("num1").value;
+         let no2 =document.getElementById("num2").value;
+         document.getElementById("span").innerHTML = (parseInt(no1)-parseInt(no2));
+}
+
+function multiply(){
+  let no1 =document.getElementById("num1").value;
+         let no2 =document.getElementById("num2").value;
+         document.getElementById("span").innerHTML = (parseInt(no1)*parseInt(no2));
+}
+
+
+function division(){
+  let no1 =document.getElementById("num1").value;
+         let no2 =document.getElementById("num2").value;
+         document.getElementById("span").innerHTML = (parseInt(no1)/parseInt(no2));
+}
+
+    </script>
+  </body>
+</html>

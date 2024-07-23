@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./calculator.css">
+    <script src="./calculator.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+
+
+    <header class="d-flex text-bg-dark flex-wrap justify-content-center align-items-center py-3 mb-4 border-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calculator-fill me-2" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5m0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5z"/>
+        </svg>
+        <span class="fs-4 fw-bold">Multi-Tasking Calculator</span>
+    </header>
+    
+
+
+<div class="container border border-3 border-black rounded-5">
+
+
+<!-- Screen of Calculator -->
+
+    <div class="calculator-tab border border-3 border-black rounded-3">
+
+        <!-- Normal Calculator -->
+
+        <div id="calculator" class="calculator"><strong>Calculator</strong>
+        <form class="myform">
+            <label for=""><strong>Enter First Number:</strong></label>
+            <input class="form-control dark-border" type="text" name="num1" id="num1" /> <br />
+            <br />
+            <label for=""><strong>Enter Second Number:</strong></label>
+            <input class="form-control dark-border" type="text" name="num2" id="num2" /> <br />
+            <br />
+      
+            <button type="button" class="btn btn-info" onclick="addition()">Add</button>
+            <button type="button" class="btn btn-info" onclick="subtraction()">Sub</button>
+            <button type="button" class="btn btn-info" onclick="multiply()">Mul</button>
+            <button type="button" class="btn btn-info" onclick="division()">Div</button><br />
+            <br />
+            <input class="form-control dark-border" type="text" id="result" value="Result:" aria-label="readonly input example" readonly>            
+          </form>
+        </div>
+
+
+        <!-- Currency Convertor -->
+
+<div id="currency-convertor" class="currency-convertor hidden"><strong>Currency Convertor</strong>
+    <form class="mycurrency">
+        <label for=""><strong>Enter Ruppees:</strong></label>
+        <input class="form-control dark-border" type="number" name="ruppee" id="ruppee" /> <br />
+        
+        <button type="button" class="btn btn-info" onclick="convertcurrency('dollar')">Dollar</button>      <input class="form-control dark-border" type="text" id="dollar" value="Dollar:" aria-label="readonly input example" readonly><br>
+
+<button type="button" class="btn btn-info" onclick="convertcurrency('pound')">Pound</button><input class="form-control dark-border" type="text" id="pound" value="pound:" aria-label="readonly input example" readonly><br>
+        
+        
+        <button type="button" class="btn btn-info" onclick="convertcurrency('dinar')">Dinar</button><input class="form-control dark-border" type="text" id="dinar" value="Dinar:" aria-label="readonly input example" readonly>
+</form>
+</div>
+
+
+<!-- temperature convertor -->
+
+<div id="temperature-convertor" class="temperature-convertor hidden"><strong>Temperature Convertor</strong>
+    <form class="mytemperature">
+        <label for="celcius"><strong>Enter Celsius:</strong></label>
+        <input class="form-control dark-border" type="number" name="celcius" id="celcius" /> <br />
+
+        <button type="button" class="btn btn-info" onclick="convertCelsius()">Convert to Fahrenheit</button>
+        <input class="form-control dark-border" type="text" id="fahrenheit" value="Fahrenheit:" aria-label="readonly input example" readonly>
+    </form>
+</div>
+
+
+
+<!-- Weight convertor -->
+
+
+<div id="weight-convertor" class="weight-convertor hidden"><strong>Weight Convertor</strong>
+
+    <form class="myweight">
+    <label for="grams"><strong>Enter Your Weight in Grams:</strong></label>
+    <input class="form-control dark-border" type="number" name="grams" id="grams" /> <br />
+
+    <button type="button" class="btn btn-info" onclick="convertGrams()">Convert</button>
+<br><br>
+    <div class="row">
+        <div class="col">
+        <input class="form-control dark-border" type="text" id="kg" value="Kilogram:" aria-label="readonly input example" readonly>   <br>         
+        <input class="form-control dark-border" type="text" id="pounds" value="Pounds:" aria-label="readonly input example" readonly>  <br>  
+    </div>
+    <div class="col">
+        <input class="form-control dark-border" type="text" id="lbs" value="LBS:" aria-label="readonly input example" readonly> <br>           
+        <input class="form-control dark-border" type="text" id="ton" value="Ton:" aria-label="readonly input example" readonly>            
+             
+    </div>
+    </div>  
+</form>
+</div>
+
+
+<!-- percentage-calculator -->
+
+
+<div id="percentage-calculator" class="percentage-calculator hidden"><strong>Percentage Calculator</strong>
+
+    <form class="mypercentage">
+    <label for=""><strong>Enter Total Marks:</strong></label>
+    <input class="form-control dark-border" type="number" name="tmarks" id="tmarks" /> 
+    <br />
+    <label for=""><strong>Enter Obtained Marks:</strong></label>
+    <input class="form-control dark-border" type="number" name="omarks" id="omarks" /> 
+    <br />
+
+    <button type="button" class="btn btn-info" onclick="calculatePercentage()">Convert to Percentage</button>
+    <br><br>
+    <input class="form-control dark-border" type="text" id="percentage" value="Percentage :" aria-label="readonly input example" readonly>
+    </form>
+</div>
+
+
+<!-- Age - calculator -->
+
+<div id="age-calculator" class="age-calculator hidden"><strong>Age Calculator</strong>
+
+    <form class="myage">
+        <label for="">Select Date of Birth</label>
+        <input type="date" class="form-control" id="dob" name="dob">
+        <br>
+    <button type="button" class="btn btn-info" onclick="calculateAge()">Check Age</button>
+    <br><br>
+
+<input class="form-control dark-border" type="text" id="age" value="Age :" aria-label="readonly input example" readonly>
+</form>
+</div>
+
+    </div>
+
+    <hr>
+
+
+        <div class="calculator-buttons">
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('currency-convertor')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Currency Convertor</strong></span>
+                </button>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('calculator')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Calculator</strong></span>
+                </button>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('temperature-convertor')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Temperature Convertor</strong></span>
+                </button>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('weight-convertor')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Weight Convertor</strong></span>
+                </button>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('percentage-calculator')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Percentage Calculator</strong></span>
+                </button>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <button class="pushable" onclick="showDiv('age-calculator')">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front"><strong>Age Calculator</strong></span>
+                </button>
+            </div>
+        </div>
+
+
+</div>
+
+
+<div class="base">
+    <footer class="d-flex text-bg-dark flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-white">&copy; This Website is Designed and Developed by Hamsavanan NG</span>
+      </div>
+    </footer>
+  </div>
+
+
+</body>
+</html>

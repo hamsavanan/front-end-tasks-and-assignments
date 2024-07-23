@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month Task</title>
+</head>
+<body>
+    
+    <div id="d1"></div><br>
+    
+    <div id="d2"></div>
+
+<script>
+
+let dateObj=new Date
+        document.getElementById("d1").innerHTML=dateObj
+        // document.getElementById("d2").innerHTML=dateObj.getMonth
+
+        let month = 5;
+        
+
+        function getMonthName(month) {
+    switch (month) {
+        case 0:
+            return "January";
+        case 1:
+            return "February";
+        case 2:
+            return "March";
+        case 3:
+            return "April";
+        case 4:
+            return "May";
+        case 5:
+            return "June";
+        case 6:
+            return "July";
+        case 7:
+            return "August";
+        case 8:
+            return "September";
+        case 9:
+            return "October";
+        case 10:
+            return "November";
+        case 11:
+            return "December";
+        default:
+            return "Invalid month";
+    }
+}
+
+document.write(getMonthName(month));
+
+</script>
+
+</body>
+</html>

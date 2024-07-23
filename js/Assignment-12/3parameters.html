@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display Full Name</title>
+<script>
+  function displayFullName(fname, mname, lname) {
+    var fullName = fname + ' ';
+    if (mname) {
+      fullName += mname + ' ';
+    }
+    fullName += lname;
+    
+    document.getElementById('fullname').textContent = 'Full Name: ' + fullName;
+  }
+</script>
+</head>
+<body>
+  <h2>Enter Names</h2>
+  <form onsubmit="return false;">
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    
+    <label for="mname">Middle Name:</label>
+    <input type="text" id="mname" name="mname"><br><br>
+    
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    
+    <button onclick="displayFullName(
+      document.getElementById('fname').value,
+      document.getElementById('mname').value,
+      document.getElementById('lname').value
+    );">Display Full Name</button>
+  </form>
+  
+  <div id="fullname"></div>
+</body>
+</html>

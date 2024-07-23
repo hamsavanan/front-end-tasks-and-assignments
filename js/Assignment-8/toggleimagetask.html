@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image</title>
+</head>
+<body>
+    
+<img src="../assets/images/roger.jfif" id="img" height="300px" width="300px" alt="roger"><br>
+<strong id="imgname">Roger</strong><br>
+<button type="button" onclick="changeimg()">Change Image</button>
+
+<script>
+let rogerImage = "../assets/images/roger.jfif";
+let rayleighImage = "../assets/images/rayleigh.jfif";
+let currentState = "roger";
+
+function changeimg(){
+    if(currentState == "roger") {
+        document.getElementById("img").src = rayleighImage;
+        document.getElementById("imgname").innerHTML = "Rayleigh";
+        currentState = "rayleigh";
+    } else {
+        document.getElementById("img").src = rogerImage;
+        document.getElementById("imgname").innerHTML = "Roger";
+        currentState = "roger";
+    }
+}
+</script>
+
+</body>
+</html>
